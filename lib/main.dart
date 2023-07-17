@@ -26,10 +26,6 @@ final theme = ThemeData().copyWith(
   ),
 );
 
-final NameProvider = Provider((Ref) {
-  return 'Favourite';
-});
-
 void main() {
   runApp(
     ProviderScope(

@@ -1,4 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+
+final NameProvider = Provider<String>((ref) {
+  return 'Favourite';
+});
 
 class MyhomePage extends StatefulWidget {
   const MyhomePage({super.key});
