@@ -1,6 +1,6 @@
 import 'package:favo/Pages/homescreen.dart';
 import 'package:flutter/material.dart';
-
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 final colorScheme = ColorScheme.fromSeed(
@@ -26,9 +26,15 @@ final theme = ThemeData().copyWith(
   ),
 );
 
+final NameProvider = Provider((Ref) {
+  return 'Favourite';
+});
+
 void main() {
   runApp(
-    const MyApp(),
+    ProviderScope(
+      child: const MyApp(),
+    ),
   );
 }
 
