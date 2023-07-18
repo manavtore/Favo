@@ -1,3 +1,5 @@
+import 'package:favo/Data/dummy_data.dart';
+import 'package:favo/Data/place.dart';
 import 'package:favo/Pages/Add_items.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -32,6 +34,15 @@ class _MyhomePageState extends State<MyhomePage> {
               ))
         ],
       ),
+      // body: ListView.builder(
+      //     padding: EdgeInsets.all(8.0),
+      //     itemCount: Placelist.length,
+      //     // itemBuilder: (BuildContext context, int index) {
+      //     //   return Container(
+      //     //     child: Center(Text(Place(id: id[]index, placename: placename[index]))),
+      //     //   );
+      //     // }
+      //     ),
     );
   }
 }

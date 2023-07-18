@@ -7,6 +7,8 @@ class Additem extends StatefulWidget {
   State<Additem> get createState => _AdditemState();
 }
 
+void _saveItem() {}
+
 class _AdditemState extends State<Additem> {
   final GlobalKey<FormState> _formkey = GlobalKey<FormState>();
   @override
@@ -23,6 +25,16 @@ class _AdditemState extends State<Additem> {
               children: [
                 TextFormField(
                   decoration: const InputDecoration(label: Text('Place')),
+                  validator: (value) {
+                    if (value == null) {}
+                  },
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: ElevatedButton.icon(
+                      onPressed: () {},
+                      icon: const Icon(Icons.add),
+                      label: const Text('Add place')),
                 )
               ],
             )),
