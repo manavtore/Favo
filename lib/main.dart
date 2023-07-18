@@ -40,7 +40,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Great Places',
       theme: theme,
-      home: MyhomePage(),
+      home: const MyhomePage(),
     );
   }
 }

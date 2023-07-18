@@ -1,3 +1,4 @@
+import 'package:favo/Pages/Add_items.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -20,7 +21,11 @@ class _MyhomePageState extends State<MyhomePage> {
         title: const Text('Favourite'),
         actions: [
           IconButton.filled(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) {
+                  return const Additem();
+                }));
+              },
               icon: const Icon(
                 Icons.add_circle,
                 color: Colors.white,

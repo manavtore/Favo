@@ -10,6 +10,10 @@ class Additem extends StatefulWidget {
 class _AdditemState extends State<Additem> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Add places'),
+      ),
+    );
   }
 }
