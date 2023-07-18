@@ -34,15 +34,17 @@ class _MyhomePageState extends State<MyhomePage> {
               ))
         ],
       ),
-      // body: ListView.builder(
-      //     padding: EdgeInsets.all(8.0),
-      //     itemCount: Placelist.length,
-      //     // itemBuilder: (BuildContext context, int index) {
-      //     //   return Container(
-      //     //     child: Center(Text(Place(id: id[]index, placename: placename[index]))),
-      //     //   );
-      //     // }
-      //     ),
+      body: ListView.builder(
+          padding: EdgeInsets.all(8.0),
+          itemCount: Placelist.length,
+          itemBuilder: (BuildContext context, int index) {
+            final Place = Placelist[index];
+
+            return ListTile(
+              title: Text(Place.placename),
+              //  subtitle: Text(Place.id),
+            );
+          }),
     );
   }
 }
