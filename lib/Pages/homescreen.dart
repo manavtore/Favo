@@ -1,5 +1,4 @@
 import 'package:favo/Data/dummy_data.dart';
-import 'package:favo/Data/place.dart';
 import 'package:favo/Pages/Add_items.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -42,7 +41,6 @@ class _MyhomePageState extends State<MyhomePage> {
 
             return ListTile(
               title: Text(Place.placename),
-              //  subtitle: Text(Place.id),
             );
           }),
     );

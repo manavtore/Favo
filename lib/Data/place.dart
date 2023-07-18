@@ -1,7 +1,9 @@
-import 'package:flutter/material.dart';
+import 'package:uuid/uuid.dart';
+
+const uuid = Uuid();
 
 class Place {
-  const Place({required this.id, required this.placename});
+  Place({required this.placename}) : id = uuid.v4();
 
   final String id;
   final String placename;
