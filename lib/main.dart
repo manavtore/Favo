@@ -28,9 +28,7 @@ final theme = ThemeData().copyWith(
 
 void main() {
   runApp(
-    ProviderScope(
-      child: const MyApp(),
-    ),
+    const MyApp(),
   );
 }
 
