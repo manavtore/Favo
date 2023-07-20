@@ -1,4 +1,5 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
+import 'package:favo/Screens/place_details.dart';
 import 'package:flutter/material.dart';
 
 import 'package:favo/models/places.dart';
@@ -27,6 +28,10 @@ class Placeslist extends StatelessWidget {
                 .textTheme
                 .titleMedium!
                 .copyWith(color: Theme.of(context).colorScheme.onBackground)),
+        onTap: () {
+          Navigator.of(context).push(MaterialPageRoute(
+              builder: (ctx) => PlacesDetailScreen(place: places[index])));
+        },
       ),
     );
   }

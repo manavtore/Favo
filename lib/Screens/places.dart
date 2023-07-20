@@ -1,5 +1,5 @@
 import 'package:favo/Providers/userplaces.dart';
-import 'package:favo/Screens/places_details.dart';
+import 'package:favo/Screens/add_items.dart';
 import 'package:favo/Widget/places_list.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
