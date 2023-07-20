@@ -1,3 +1,4 @@
+import 'package:favo/Screens/places.dart';
 import 'package:favo/Widget/places_list.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -40,7 +41,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Great Places',
       theme: theme,
-      home: PlacesScreen(places: []),
+      home: Placesscreen(),
     );
   }
 }
