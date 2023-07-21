@@ -43,7 +43,9 @@ class _AddPlacesScreenState extends ConsumerState<AddPlacesScreen> {
                 decoration: const InputDecoration(labelText: 'Title'),
                 controller: _titlecontroler,
                 style: TextStyle(
-                    color: Theme.of(context).colorScheme.onBackground),
+                  color:
+                      Theme.of(context).copyWith().colorScheme.primaryContainer,
+                ),
               ),
               const SizedBox(
                 height: 10,

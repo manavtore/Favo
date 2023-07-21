@@ -1,5 +1,5 @@
 import 'package:favo/Providers/userplaces.dart';
-import 'package:favo/Screens/add_items.dart';
+import 'package:favo/Screens/add_place.dart';
 import 'package:favo/Widget/places_list.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -19,7 +19,11 @@ class Placesscreen extends ConsumerWidget {
                 Navigator.of(context).push(MaterialPageRoute(
                     builder: (ctx) => const AddPlacesScreen()));
               },
-              icon: const Icon(Icons.add))
+              icon: Icon(
+                Icons.add,
+                color:
+                    Theme.of(context).copyWith().colorScheme.primaryContainer,
+              ))
         ],
       ),
       body: Placeslist(places: userplaces),
