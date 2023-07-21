@@ -1,4 +1,5 @@
 import 'package:favo/Providers/userplaces.dart';
+import 'package:favo/Widget/image_input.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -47,6 +48,10 @@ class _AddPlacesScreenState extends ConsumerState<AddPlacesScreen> {
                       Theme.of(context).copyWith().colorScheme.primaryContainer,
                 ),
               ),
+              const SizedBox(
+                height: 10,
+              ),
+              const Imageinput(),
               const SizedBox(
                 height: 10,
               ),
