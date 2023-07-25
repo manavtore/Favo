@@ -9,6 +9,7 @@ class Imageinput extends StatefulWidget {
 
 class _ImageinputState extends State<Imageinput> {
   @override
+  void Takepicture() {}
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
