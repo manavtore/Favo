@@ -22,7 +22,7 @@ class _AddPlacesScreenState extends ConsumerState<AddPlacesScreen> {
   void _savePlace() {
     final _enterTitle = _titlecontroler.text;
 
-    if (_enterTitle == null || _enterTitle.isEmpty) {
+    if (_enterTitle.isEmpty) {
       return;
     }
     ref.read(userPlacesProvider.notifier).addPlace(_enterTitle);
