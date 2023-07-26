@@ -10,14 +10,30 @@ class Imageinput extends StatefulWidget {
 }
 
 class _ImageinputState extends State<Imageinput> {
-  @override
-  Future<void> Takepicture() async {
-    File? _selectedimage;
+  File? _selectedimage;
+  void Takepicture() async {
     final imagePicker = ImagePicker();
-    final pickedImage = await imagePicker.pickImage(source: ImageSource.camera);
+    final pickedImage =
+        await imagePicker.pickImage(source: ImageSource.camera, maxWidth: 600);
+
+    if (pickedImage == null) {
+      return;
+    } else {
+      _selectedimage = File(pickedImage.path);
+    }
   }
 
+  @override
   Widget build(BuildContext context) {
+    Widget content = TextButton.icon(
+        onPressed: () {},
+        icon: const Icon(Icons.camera),
+        label: const Text('Take Picture'));
+
+    if (_selectedimage != null) {
+      content = Image.file(_selectedimage!, fit: BoxFit.cover);
+    }
+
     return Container(
       decoration: BoxDecoration(
           border: Border.all(
@@ -26,10 +42,7 @@ class _ImageinputState extends State<Imageinput> {
       height: 250,
       width: double.infinity,
       alignment: Alignment.center,
-      child: TextButton.icon(
-          onPressed: () {},
-          icon: const Icon(Icons.camera),
-          label: const Text('Take Picture')),
+      child: content,
     );
   }
 }
