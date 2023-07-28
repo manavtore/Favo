@@ -25,7 +25,9 @@ class _AddPlacesScreenState extends ConsumerState<AddPlacesScreen> {
     if (_enterTitle.isEmpty) {
       return;
     }
-    ref.read(userPlacesProvider.notifier).addPlace(_enterTitle);
+    ref.read(userPlacesProvider.notifier).addPlace(
+          _enterTitle,
+        );
 
     Navigator.of(context).pop();
   }
