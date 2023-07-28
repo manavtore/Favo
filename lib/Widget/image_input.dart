@@ -3,14 +3,16 @@ import 'package:image_picker/image_picker.dart';
 import 'dart:io';
 
 class Imageinput extends StatefulWidget {
-  const Imageinput({super.key});
+  const Imageinput({super.key, required this.onPickedImage});
 
+  final void Function(File image) onPickedImage;
   @override
   State<Imageinput> get createState => _ImageinputState();
 }
 
 class _ImageinputState extends State<Imageinput> {
   File? _selectedimage;
+
   void Takepicture() async {
     final imagePicker = ImagePicker();
     final pickedImage =
@@ -22,6 +24,7 @@ class _ImageinputState extends State<Imageinput> {
       setState(() {
         _selectedimage = File(pickedImage.path);
       });
+      widget.onPickedImage(_selectedimage!);
     }
   }
 

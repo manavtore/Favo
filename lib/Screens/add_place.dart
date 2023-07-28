@@ -2,6 +2,7 @@ import 'package:favo/Providers/userplaces.dart';
 import 'package:favo/Widget/image_input.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'dart:io';
 
 class AddPlacesScreen extends ConsumerStatefulWidget {
   const AddPlacesScreen({super.key});
@@ -12,7 +13,7 @@ class AddPlacesScreen extends ConsumerStatefulWidget {
 
 class _AddPlacesScreenState extends ConsumerState<AddPlacesScreen> {
   final _titlecontroler = TextEditingController();
-
+  File? _selectedImage;
   @override
   void dispose() {
     _titlecontroler.dispose();
@@ -22,12 +23,12 @@ class _AddPlacesScreenState extends ConsumerState<AddPlacesScreen> {
   void _savePlace() {
     final _enterTitle = _titlecontroler.text;
 
-    if (_enterTitle.isEmpty) {
+    if (_enterTitle.isEmpty || _selectedImage == null) {
       return;
     }
-    ref.read(userPlacesProvider.notifier).addPlace(
-          _enterTitle,
-        );
+    ref
+        .read(userPlacesProvider.notifier)
+        .addPlace(_enterTitle, _selectedImage!);
 
     Navigator.of(context).pop();
   }
@@ -53,7 +54,11 @@ class _AddPlacesScreenState extends ConsumerState<AddPlacesScreen> {
               const SizedBox(
                 height: 10,
               ),
-              const Imageinput(),
+              Imageinput(
+                onPickedImage: (image) {
+                  _selectedImage = image;
+                },
+              ),
               const SizedBox(
                 height: 10,
               ),
