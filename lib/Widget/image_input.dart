@@ -19,7 +19,9 @@ class _ImageinputState extends State<Imageinput> {
     if (pickedImage == null) {
       return;
     } else {
-      _selectedimage = File(pickedImage.path);
+      setState(() {
+        _selectedimage = File(pickedImage.path);
+      });
     }
   }
 
@@ -31,7 +33,15 @@ class _ImageinputState extends State<Imageinput> {
         label: const Text('Take Picture'));
 
     if (_selectedimage != null) {
-      content = Image.file(_selectedimage!, fit: BoxFit.cover);
+      content = GestureDetector(
+        onTap: Takepicture,
+        child: Image.file(
+          _selectedimage!,
+          fit: BoxFit.cover,
+          width: double.infinity,
+          height: double.infinity,
+        ),
+      );
     }
 
     return Container(
